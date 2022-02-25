@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Shizuru&display=swap');
+
+
+.form-container {
+  /* border: 1px solid black; */
+  /* border-radius: 5px; */
+  /* padding: 3rem; */
+  width: 70vw;
+  max-width: 500px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* box-sizing: border-box; */
+}
+
+.form-container .form-header {
+  /* position: relative; */
+  margin: 1.5rem 0rem;
+  font-family: 'Shizuru', cursive;
+  font-size: 28px;
+}
+
+.form-container form {
+  position: relative;
+  width: 100%;
+  /* padding: 0.5rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container form .input-design{
+  /* width: 250px;
+  height: 25px; */
+  width: 70%;
+  padding: 0.5rem;
+  /* border-radius: 3px; */
+  margin: 0.5rem 0.3rem;
+}
+
+.password-section {
+  width: 70%;
+  /* height: 30px; */
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.password-section > .pass {
+  width: 100%;
+  margin: 0.5rem 0.3rem;
+  padding: 0.5rem;
+}
+
+.password-section #visibility {
+  position: absolute;
+  top: 20px;
+  right: 1px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 78%;
+  text-align: left;
+  margin: 0.5rem 0rem;
+}
+
+button {
+  margin: 1.5rem 0rem 2rem 0rem;
+  padding: 0.9rem;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+}
+
+.light {
+  background: rgb(87, 87, 243);
+}
+
+.dark {
+  background: blue;
+}
