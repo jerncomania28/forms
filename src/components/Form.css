@@ -78,7 +78,18 @@
   width: 78%;
   text-align: left;
   margin: 0.5rem 0rem;
+
+   display: flex;
+   
 }
+
+.checkbox > span{
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+
 
 button {
   margin: 1.5rem 0rem 2rem 0rem;
@@ -91,7 +102,7 @@ button {
 }
 
 .light {
-  background: rgb(87, 87, 243);
+  background: rgb(126, 126, 250);
 }
 
 .dark {

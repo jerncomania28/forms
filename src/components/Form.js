@@ -127,8 +127,8 @@ function Form() {
             />
           </div>
           <div className="checkbox">
-            <input type="checkbox" onChange={handleCheckbox} /> I accept terms &
-            conditions
+            <input type="checkbox" onChange={handleCheckbox} /> <span>I accept terms &
+            conditions</span>
           </div>
 
           <button
