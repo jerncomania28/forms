@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "./Form.css";
+import "../style/Form.css";
 // import "./App.css";
 // import {BrowserRouter , Routes , Route, Link} from 'react-router-dom'
 
@@ -16,40 +16,12 @@ function Form() {
   const [check, setCheck] = useState(true);
   const [showPasswrd, setShowPasswrd] = useState(false);
 
-  const passwordRef = useRef(null);
-
   // end of state declaration
-
-  // states methods
-
-  let handleName = (event) => {
-    setName(event.target.value);
-  };
-  let handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  let handleCountry = (event) => {
-    setCountry(event.target.value);
-  };
-  let handlePhone = (event) => {
-    setPhone(event.target.value);
-  };
-
-  let handlePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  let handleCheckbox = (event) => {
-    setCheck(!check);
-  };
 
   //  handle submit function
 
   let handleSubmit = (event) => {
     console.log(name, email, country, phone, password);
-    if(!passwordRef.current.value.includes(Number)){
-       console.log("does not include number")
-    }
 
     event.preventDefault();
   };
@@ -69,7 +41,9 @@ function Form() {
             type="text"
             placeholder="Name"
             value={name}
-            onChange={handleName}
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
             name="Name"
             className="input-design"
           />
@@ -77,7 +51,9 @@ function Form() {
             type="email"
             placeholder="Email Address"
             value={email}
-            onChange={handleEmail}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
             name="Email"
             className="input-design"
           />
@@ -85,7 +61,9 @@ function Form() {
             type="text"
             placeholder="Country"
             value={country}
-            onChange={handleCountry}
+            onChange={(event) => {
+              setCountry(event.target.value);
+            }}
             name="Country"
             className="input-design"
           />
@@ -93,42 +71,39 @@ function Form() {
             type="Number"
             placeholder="Phone"
             value={phone}
-            onChange={handlePhone}
+            onChange={(event) => {
+              setPhone(event.target.value);
+            }}
             name="Phone"
             className="input-design"
           />
           <div className="password-section">
             <input
-              type="password"
+              type={showPasswrd ? "text" : "password"}
               placeholder="Password"
               value={password}
-              onChange={handlePassword}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
               className="pass"
               name="Password"
-              ref={passwordRef}
             />
             <FontAwesomeIcon
               icon={showPasswrd ? "fa-eye" : "fa-eye-slash"}
               id="visibility"
               onClick={(event) => {
-
-    
-
-                (!showPasswrd)
-                ? (passwordRef.current.type = "text")
-                : (passwordRef.current.type = "password")
-
                 setShowPasswrd(!showPasswrd);
-
-             ;
-
-                //   console.log(passwordRef.current.type="text")
               }}
             />
           </div>
           <div className="checkbox">
-            <input type="checkbox" onChange={handleCheckbox} /> <span>I accept terms &
-            conditions</span>
+            <input
+              type="checkbox"
+              onChange={() => {
+                setCheck(!check);
+              }}
+            />{" "}
+            <span>I accept terms & conditions</span>
           </div>
 
           <button
